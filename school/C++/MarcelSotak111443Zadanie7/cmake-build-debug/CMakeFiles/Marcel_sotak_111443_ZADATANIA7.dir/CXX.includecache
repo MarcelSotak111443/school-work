@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/marma/CLionProjects/prog2/Marcel_sotak_111443_ZADATANIA7/main.cpp
+iostream
+-
+string
+-
+map
+-
+list
+-
+stack
+-
+queue
+-
+vector
+-
+sstream
+-
+

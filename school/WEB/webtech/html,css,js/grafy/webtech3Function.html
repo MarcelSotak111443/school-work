@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="webtech3.css">
+   
+    
+
+
+ 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+</head>
+<body>
+  
+<!--Navbar-->
+<nav class="navbar navbar-light light-blue lighten-4">
+
+  <!-- Navbar brand -->
+  <a class="navbar-brand" href="#">Navbar</a>
+
+  <!-- Collapse button -->
+  <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+    aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text">
+        <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div><i
+        class="fas fa-bars fa-1x"></i></span></button>
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="webtech3.html">Grafy<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="webtech3Function.html">Function</a>
+      </li>
+      
+    </ul>
+    <!-- Links -->
+
+  </div>
+  <!-- Collapsible content -->
+
+</nav>
+
+<div class="buttonDiv">
+  
+<button  type="button" class="buttonStopChart" onclick="stopGraph()"> ZASTAV GRAF</button>
+
+</div>
+
+
+<div class="chart-container-dynamical">
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js" integrity="sha512-Tfw6etYMUhL4RTki37niav99C6OHwMDB2iBT5S5piyHO+ltK2YX8Hjy9TXxhE1Gm/TmAV0uaykSpnHKFIAif/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-zoom/1.2.1/chartjs-plugin-zoom.min.js" integrity="sha512-klQv6lz2YR+MecyFYMFRuU2eAl8IPRo6zHnsc9n142TJuJHS8CG0ix4Oq9na9ceeg1u5EkBfZsFcV3U7J51iew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script> 
+
+
+
+var  multipplyier = 1;
+
+
+ 
+ 
+ 
+
+  const labels = [];
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'cosinus',
+    data: [],
+    fill: false,
+    borderColor: 'rgb(75, 192, 192)',
+    tension: 0.1
+  },
+  {
+    label: 'sinus',
+    data: [],
+    fill: false,
+    borderColor: 'rgb(124,10, 192)',
+    tension: 0.1
+  }
+],
+ };
+ ///
+const ctx = document.getElementById('myChart');
+
+
+var chart =  new Chart(ctx, {
+
+  type: 'line',
+  data: data,
+  options: {
+    plugins: {
+      zoom: {
+        zoom: {
+          wheel: {
+            enabled: true,
+            
+          },
+          drag:{
+            enabled: true,
+          },
+          pinch: {
+            enabled: true
+          },
+          mode: 'xy',
+        }
+      }
+    }
+  }
+
+});
+chart.update();
+
+
+
+///
+var source = new EventSource("http://old.iolab.sk/evaluation/sse/sse.php");
+  source.onmessage = function (event) {
+    var parsedData = JSON.parse(event.data);
+    addData(chart , parsedData.x , parsedData.y1 , parsedData.y2);
+    
+  }
+
+  function stopGraph(){
+    source.close();
+  }
+  ///
+
+
+
+function addData(chart, label, datay1 , datay2) {
+  chart.data.labels.push(label);
+  
+  chart.data.datasets[0].data.push(datay1 * multipplyier);
+  chart.data.datasets[1].data.push(datay2 * multipplyier);
+
+  chart.update();
+}
+
+function removeData(chart) {
+  chart.data.labels.pop();
+  chart.data.datasets.forEach((dataset) => {
+      dataset.data.pop();
+  });
+  chart.update();
+}
+
+
+
+</script>
+<div class="radioButtonForLines">
+  <input type="radio" onclick="updateChart(this)" id ="a" value=0 name="radio"> none <br>
+  <input type="radio"  onclick="updateChart(this)" id = "a" value=1 name="radio"> sinus<br>
+  <input type="radio"  onclick="updateChart(this)" id ="a " value=2 name="radio"> cosinus <br>
+  <input type="radio"  onclick="updateChart(this)" id = "a" value=3 name="radio"> both<br>
+
+
+</div>
+
+<div class="radioButtons" >
+
+
+  <input type="radio"onclick="showHiddenAnswer()"id ="answerone" value="slider" name="radio"> slider <br>
+  <input type="radio"onclick="showHiddenAnswer()" id = "answertwo" value="text" name="radio"> text<br>
+
+
+
+<script>
+  function updateChart(data){
+    console.log("unga");
+    console.log(data.value);
+       switch(data.value){
+       
+        case '0':
+        console.log("unga");
+        chart.hide(0);
+          chart.hide(1);
+         
+          break;
+        case '1':
+        chart.hide(0);
+          chart.show(1);
+          break;
+        case '2':
+        chart.hide(1);
+          chart.show(0);
+          break;
+        case '3':
+        chart.show(1);
+          chart.show(0);
+          break;
+
+       }
+       chart.update();
+  }
+
+  const style = document.createElement("style");
+
+  function showHiddenAnswer(){
+	if  (document.getElementById( "answerone" ).checked){
+		    style.textContent = ' ' +
+        '.textInput{visibility:hidden}'+
+    '#amplitude1{visibility:visible}'+
+    '.wrapper{margin:auto}'+
+    '.wrapper{width:200px}'+
+    '.textInput{width: 192px;}'+
+    '#amplitude1{width: 200px;}'+
+    'output{margin-left:45%}';
+    
+   
+
+  }
+  if  (document.getElementById( "answertwo").checked){
+    style.textContent = ' ' +
+    
+    '.textInput{visibility:visible}'+
+    '#amplitude1{visibility:hidden}'+
+    '.wrapper{margin:auto}'+
+    '.wrapper{width:200px}'+
+    '.textInput{width: 192px;}'+
+    '#amplitude1{width: 200px;}'+
+    'output{margin-left:45%}';
+    
+ }
+}
+
+
+</script>
+
+
+<custom-element min-val="1" max-val="200" ></custom-element>
+
+
+<script src="component.js"></script>
+<script src="js.js"></script>
+
+<!-- <input type="text" maxlength="1" min="3" max="5" oninput="this.value=this.value.replace(/[^0-9]/g,'');" /> -->
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</body>
+</html>

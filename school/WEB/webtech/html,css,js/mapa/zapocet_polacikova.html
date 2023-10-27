@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="employees">tu </div>
+
+
+<script>
+    let employe;
+
+let http = new XMLHttpRequest();
+http.open('get', 'zamestnanec.json' , true);
+http.send();
+
+http.onload = function load(){
+
+    if(this.readyState == 4 && this.status== 200){
+
+        employe = JSON.parse(this.responseText);
+       
+        let item;
+
+        let output = "";
+
+        for( item in employe){
+
+        }
+       
+        for (let i = 0; i < item.length; i ++){
+            console.log(item.length)
+            console.log(employe[item][i].name)
+           
+            output +=`
+
+            <div>
+<p>${employe[item][i].name}</p>
+<p>${employe[item][i].surname}</p>
+<p>${employe[item][i].email}</p>
+<div>
+<button onclick="remove(this)">vymaz</button>
+</div>
+</div>
+            
+            `
+        }
+
+        document.querySelector("#employees").innerHTML = output;
+    }
+
+    
+}
+</script>
+
+<div class="inputs">
+    meno
+    <input type="text" id="nameB" name="tentacles"
+       > 
+       priezvisko
+       <input type="text" id="surnameB" name="tentacles"
+      >
+      
+      emial
+      <input type="text" id="emailB" name="tentacles"
+     >
+     <div class="buttonContainer">
+        <button  class="button" onclick="checkValues()">Generuj </button>
+      </div>
+      <b><div id="warning"></div></b>
+  
+    </div>
+
+
+</body>
+</html>
+
+<script> 
+
+function remove(employe){
+    console.log()
+
+    employe.parentNode.parentNode.remove();
+}
+
+
+
+   
+    function checkValues(){
+     xRed = new Boolean(false);
+     yRed = new Boolean(false);
+     zRed = new Boolean(false);
+     var  variable =0;
+    var x =  document.getElementById("nameB");
+    var y =  document.getElementById("surnameB");
+    var z =  document.getElementById("emailB");
+    var warning =  document.getElementById("warning");
+    console.log(x.value);
+    if( (/[^a-zA-Z]/.test(parseInt(x.value)))){
+        console.log("what");
+        x.style.border = "2px solid red";
+        warning.innerHTML = "nespravny Vstup";
+        warning.style.color = "red";
+        variable = 1;
+        
+        xRed = false;
+    }else{
+        x.style.border = "1px solid black";
+        xRed = true;
+        warning.innerHTML = " ";
+        variable = 0
+      
+    }
+
+    if(/[^a-zA-Z]/.test(parseInt(y.value))){
+        console.log("what");
+        y.style.border = "2px solid red";
+        warning.innerHTML = "nespravny Vstup";
+        warning.style.color = "red";
+        yRed = false;
+    }else{
+        if(variable == 0)
+        warning.innerHTML = " ";
+        y.style.border = "1px solid black";
+   
+        yRed = true;
+
+    }
+    if(/[^a-zA-Z]/.test(parseInt(z.value))){
+        console.log("what");
+        z.style.border = "2px solid red";
+        warning.innerHTML = "nespravny Vstup";
+        warning.style.color = "red";
+        zRed = false;
+    }else{
+        if(variable == 0)
+        warning.innerHTML = " ";
+        z.style.border = "1px solid black";
+           zRed = true;
+
+    }
+    if(xRed && yRed &&zRed){
+        
+        
+        add();
+    }
+    else{
+
+    }
+}
+
+function add(){
+    var output = 0;
+    var x =  document.getElementById("nameB");
+   console.log(x)
+   var y =  document.getElementById("surnameB");
+    var z =  document.getElementById("emailB");
+
+    output +=`
+
+<div>
+<p>${x.value}}</p>
+<p>${y.value}</p>
+<p>${z.value}</p>
+<div>
+<button onclick="remove(this)">vymaz</button>
+</div>
+</div>
+
+`
+
+var employees = document.getElementById("employees");
+var added = document.createElement("div")
+added.setAttribute("id","added");
+employees.appendChild(added)
+document.querySelector("#added").innerHTML = output;
+}
+    
+
+</script>

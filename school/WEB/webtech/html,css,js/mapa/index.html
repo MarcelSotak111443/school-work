@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+</head>
+
+<body>
+
+    <div class="websiteGrid">
+        <div><a href="#">galeria</a></div>
+        <div><a href="map.html">mapa</a></div>
+    </div>
+
+    <div class="filterContainer">
+
+        <input class="filter"  type="text" id="myInput" onkeyup="myFunction()" placeholder="hladaj" title="Type in a name">
+    </div>
+
+    <div class="ContainerForPhotos">
+        <div id="photos"></div>
+    </div>
+
+    <div id="modal">
+        
+
+    </div>
+    
+   
+
+    <div id="mapContainer">
+    <div id="map"></div>
+</div>
+    <script
+    
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3owr7r9uEBVCUGc6PzuQzenUgm1izwDE&callback=initMap&v=weekly"
+      defer
+    >
+
+</script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+<script>
+mapModal = document.getElementById("map");
+
+
+let products;
+
+let http = new XMLHttpRequest();
+http.open('get', 'photos.json' , true);
+http.send();
+http.onload = function(){
+
+    if(this.readyState == 4 && this.status== 200){
+
+        products = JSON.parse(this.responseText);
+       
+
+
+        let output = "";
+
+        for(let item of products){
+            output +=`
+            <div class = "photos">
+            <img onclick="showDetails(this)" src="${item.path + item.file}" alt="1" name="${item.file}">
+ 
+            </div>
+            
+            `
+        }
+
+        document.querySelector("#photos").innerHTML = output;
+    }
+
+    
+}
+
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+
+    input = document.getElementById("myInput");
+
+    filter = input.value.toUpperCase();
+
+    photosContainer = document.getElementById("photos");
+    console.log("what" + photosContainer);
+
+    li = photosContainer.getElementsByTagName("div");
+    console.log("what "+ li);
+
+    console.log(li);
+    for (i = 0; i < li.length; i++) {
+        console.log(products[i].name); 
+
+        if ( (products[i].name.toUpperCase().indexOf(filter) > -1) || (products[i].description.toUpperCase().indexOf(filter) > -1) )   {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+function showDetails(picture){
+        var upperLayer = document.getElementById("modal");
+        upperLayer.setAttribute("style", ` width: 100%;
+        height: 200%;
+    background-color: whitesmoke;
+    position: absolute;
+    top: 0;
+    visibility: hidden;`)
+        for(let item of products){
+            if (item.file == picture.name) {
+                console.log(item.description)
+
+                
+       
+        const words = item.GPS.split(',')
+        latV = parseFloat(words[0]);
+        lngV = parseFloat(words[1]);
+        map.setCenter(new google.maps.LatLng(latV , lngV));
+
+        marker  = new google.maps.Marker({
+        position: { lat: latV, lng: lngV},
+        map,
+        title: "Hello World!",
+        });   
+
+        
+        var image_name = document.createElement("div");
+        image_name.innerHTML = item.name;
+        image_name.setAttribute("style", "width:300px; text-align:center; margin:auto; font-size: 30px; margin-bottom:10px")
+        image_name.setAttribute("id","imageName");
+        upperLayer.appendChild(image_name);
+
+        var image_description = document.createElement("div");
+        image_description.innerHTML = item.description;
+        image_description.setAttribute("style", "width:300px; text-align:center; margin:auto; font-size: 20px; margin-bottom: 5px")
+        image_description.setAttribute("id","imageDescription");
+
+        upperLayer.appendChild(image_description);
+
+        
+        var image_date = document.createElement("div");
+        image_date.innerHTML = item.date;
+        image_date.setAttribute("style", "width:300px; text-align:center; margin:auto; margin-bottom:20px")
+        image_date.setAttribute("id","imageDate");
+        upperLayer.appendChild(image_date);
+
+     
+
+        var image = document.createElement("img");
+        image.setAttribute("style","width: 100%; height:100%; margin:auto; object-fit: cover;")
+        image.setAttribute("id","modalImage")
+        image.setAttribute("name", item.name)
+        image.setAttribute("src",item.path + item.file);
+
+        var imageContainer = document.createElement("div");
+        imageContainer.setAttribute("style","display: grid; grid-template-columns: 10% 80% 10%")
+        imageContainer.setAttribute("class","grid");
+
+    
+        var ArrowRightGrid = document.createElement("div");
+        ArrowRightGrid.setAttribute("style", "  text-align:center ; vertical-align: middle;")
+       
+
+
+        var buttonRight = document.createElement("button");
+        buttonRight.setAttribute("onClick", "changePicture(1)")
+        buttonRight.setAttribute("class", "arrowMove")
+        buttonRight.setAttribute("style", "width: 50px; height: 25px;margin-top: 200%")
+        buttonRight.innerHTML = ">"
+
+        var buttonLeft = document.createElement("button");
+        buttonLeft.setAttribute("onClick", "changePicture(-1)")
+        buttonLeft.setAttribute("class", "arrowMove")
+        buttonLeft.setAttribute("style", "width: 50px; height: 25px; margin-top: 200%")
+        buttonLeft.innerHTML = "<"
+            
+        var ArrowLeftGrid = document.createElement("div");
+        ArrowLeftGrid.setAttribute("style", "  text-align:center ;")
+
+     
+        var mapContainer = document.createElement("div");
+        mapContainer.setAttribute("style","height:700px;width:80%px; margin:auto; margin-bottom:100px")
+    
+        
+  
+       
+        var exit = document.createElement("button");
+        exit.setAttribute("onClick", "hideModal()")
+        exit.setAttribute("style", "width: 50px; height: 25px; margin-top: 5px")
+        exit.setAttribute("class", "button")
+        exit.innerHTML = "vypni";
+
+        var exitContainer =  document.createElement("div");
+        exitContainer.setAttribute("style", "text-align:center")
+        exitContainer.appendChild(exit);
+
+        
+        var slideShow = document.createElement("button");
+        slideShow.setAttribute("onClick", "slideShow()");
+        slideShow.setAttribute("id", "slideShow")
+        slideShow.setAttribute("style", "width: 150px; height: 50px; margin-top: 5px")
+        slideShow.setAttribute("class", "button")
+        slideShow.innerHTML = "|>";
+
+        var slideShowContainer =  document.createElement("div");
+        slideShowContainer.setAttribute("style", "text-align:center")
+        slideShowContainer.appendChild(slideShow);
+
+        
+        mapContainer.appendChild(mapModal);
+        upperLayer.appendChild(mapContainer);
+        ArrowLeftGrid.appendChild(buttonLeft);
+        ArrowRightGrid.appendChild(buttonRight);
+        
+        imageContainer.appendChild(ArrowLeftGrid)
+        imageContainer.appendChild(image);
+        imageContainer.appendChild(ArrowRightGrid)
+       
+        
+    
+        
+
+
+    }
+    }
+        upperLayer.style.visibility = "visible";
+        upperLayer.appendChild(imageContainer);
+        upperLayer.appendChild(exitContainer);
+        upperLayer.appendChild(slideShowContainer);
+        
+}
+
+function changePicture(bool){
+    var currentNumber;
+    console.log(bool)
+    var name = document.getElementById("imageName");
+    
+    var description = document.getElementById("imageDescription");
+    var date = document.getElementById("imageDate");
+    
+
+    var imageName = document.getElementById("modalImage");
+    
+    for(let item = 0; item < products.length; item++ ){
+
+        if (products[item].name == imageName.name) {
+
+            
+           
+            if( bool == 1 && item + bool >= products.length )
+            item = 0;
+            if(bool == -1  && item + bool < 0)
+            item = 9;
+
+            const words = products[item + bool].GPS.split(',')
+            latV = parseFloat(words[0]);
+            lngV = parseFloat(words[1]);
+            map.setCenter(new google.maps.LatLng(latV , lngV));
+            marker  = new google.maps.Marker({
+
+            position: { lat: latV, lng: lngV},
+            map,
+            title: "Hello World!",
+            });  
+          
+            name.innerHTML = products[item + bool].name;
+          
+            description.innerHTML = products[item + bool].description;
+         
+            date.innerHTML = products[item + bool].date;
+            
+            imageName.setAttribute("src",products[item + bool].path +products[item + bool].file);
+            imageName.setAttribute("name", products[item + bool].name)
+            break;
+            }
+            }
+}
+
+
+function initMap() {
+  const myLatLng = { lat: -25.363, lng: 131.044 };
+  map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 20,
+    center: myLatLng,
+  });
+
+  marker = new google.maps.Marker({
+    position: myLatLng,
+    map,
+    title: "Hello World!",
+  });
+
+ 
+}
+
+window.initMap = initMap;
+var intervalID;
+
+function hideModal(){
+    clearInterval(intervalID);
+ mapModal = document.getElementById("map");
+ var modal = document.getElementById("modal");
+    while (modal.firstChild) {
+    modal.removeChild(modal.lastChild);
+  }
+    modal.style.visibility = "hidden";
+}
+var slideShowVar = 0;
+
+
+function slideShow(){
+
+    
+    slideShowButton = document.getElementById("slideShow");
+
+    console.log(slideShow)
+
+    if(slideShowVar === 1){
+        clearInterval(intervalID);
+      
+        slideShowVar = 0;
+        slideShowButton.innerHTML = "|>";
+        
+    }else
+
+
+    if(slideShowVar === 0){
+        slideShowVar = 1;
+        intervalID =  setInterval(function() { changePicture(1) },1000);
+        slideShowButton.innerHTML = "| |";
+    }
+    
+     
+        
+    }
+
+</script>

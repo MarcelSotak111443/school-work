@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="webtech3.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+</head>
+<body>
+  
+<!--Navbar-->
+<nav class="navbar navbar-light light-blue lighten-4">
+
+  <!-- Navbar brand -->
+  <a class="navbar-brand" href="#">Navbar</a>
+
+  <!-- Collapse button -->
+  <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+    aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text">
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div><i
+        class="fas fa-bars fa-1x"></i></span></button>
+
+  <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="webtech3.html">Grafy<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="webtech3Function.html">Function</a>
+      </li>
+      
+    </ul>
+    <!-- Links -->
+
+  </div>
+  <!-- Collapsible content -->
+
+</nav>
+<!--/.Navbar-->
+
+
+
+
+
+  <div class="chart-container">
+    <canvas id="myChart"></canvas>
+</div>
+
+<div class="chart-container-Horizontal" >
+  <canvas id="myChartHorizontal"></canvas>
+</div>
+
+
+<div class="flex-container">
+  <div class="pie-chart-container">
+    <canvas id="pieChartA"></canvas>
+  </div>
+  <div class="pie-chart-container">
+    <canvas id="pieChartB"></canvas>
+  </div>
+  <div class="pie-chart-container">
+    <canvas id="pieChartC"></canvas>
+  </div>
+  <div class="pie-chart-container">
+    <canvas id="pieChartD"></canvas>
+  </div>
+  <div class="pie-chart-container">
+    <canvas id="pieChartE"></canvas>
+  </div>
+  <div class="pie-chart-container">
+    <canvas id="pieChartF"></canvas>
+  </div>
+</div>
+
+
+<div class="chart-containeris">
+  <canvas id="myChartBubble"></canvas>
+</div>
+
+
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js" integrity="sha512-Tfw6etYMUhL4RTki37niav99C6OHwMDB2iBT5S5piyHO+ltK2YX8Hjy9TXxhE1Gm/TmAV0uaykSpnHKFIAif/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="module">
+
+
+
+const label = ["ZS 2021/2022","ZS 2020/2021","2019/2020","ZS 2018/2019","ZS 2017/2018","ZS 2016/2017"];
+const data = {
+  labels: label,
+  datasets: [
+    {
+      label: 'A',
+      data: [50,55,22,23,24,14],
+      borderColor:'#05445E',
+      backgroundColor: '#05445E',
+    },
+    {
+      label: 'B',
+      data: [42,48,36,20,31,55],
+      borderColor: '#189AB4',
+      backgroundColor: '#189AB4',
+    },
+    {
+      label: 'C',
+      data: [36,26,36,14,24,45],
+      borderColor: '#75E6DA',
+      backgroundColor: '#75E6DA',
+    },
+    {
+      label: 'D',
+      data: [18,8,35,3,10,15],
+      borderColor: '##D4F1F4',
+      backgroundColor: '#D4F1F4',
+    },
+    {
+      label: 'E',
+      data: [10,5,4,1,6,2],
+      borderColor: '#9BD0F5',
+      backgroundColor: '#18b4a7',
+    },
+    {
+      label: 'FX',
+      data: [0,0,3,5,5,4],
+      borderColor: '#9BD0F5',
+      backgroundColor: '#0f7168',
+    },
+    {
+      label: 'FN',
+      data: [7,2,1,2,1,0],
+      borderColor: '#9BD0F5',
+      backgroundColor: '#062d2a',
+    },
+    
+  ]
+};
+
+const labels = ["A","B","C","D","E","FN","FX"];
+const datas = {
+  labels: labels,
+  datasets: [
+    {
+      label: 'A',
+      data: [188,232,181,89,28,17,13],
+      backgroundColor: [
+      'rgba(55, 99, 132,0.4)',
+      'rgba(54, 162, 235,0.4)',
+      'rgba(255, 205, 86,0.4)',
+      'rgba(25,56,24,0.4)',
+      'rgba(244,5,124,0.4)',
+      'rgba(1,233,233,0.4)',
+      'rgba(40,150,60,0.4)',
+
+    ],
+    },
+    
+  ]
+};
+
+const bubbleChart = document.getElementById('myChartBubble');
+new Chart(bubbleChart, {
+  type: 'polarArea',
+  data: datas,
+  options: {
+    responsive: true,
+    plugins: {
+      
+      legend: {
+        position: 'top',
+      },
+
+      title: {
+        display: true,
+        text: 'SÚČET ZNÁMOK ZA POSLEDNYCH 5 ROKOV'
+      },
+       
+    }
+    }
+  },
+
+);
+
+
+const horizontalChart = document.getElementById('myChartHorizontal');
+new Chart(horizontalChart, {
+  type: 'bar',
+  data: data,
+  options: {
+    indexAxis: 'y',
+    // Elements options apply to all of the options unless overridden in a dataset
+    // In this case, we are setting the border of each horizontal bar to be 2px wide
+    elements: {
+      bar: {
+        borderWidth: 2,
+      }
+    },
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: 'right',
+      },
+      title: {
+        display: true,
+        text: 'ZNÁMKY ŽIAKOV Z WEBTECHU ZA POSLEDNYCH 5 ROKOV'
+      }
+    }
+  },
+});
+
+const ctx = document.getElementById('myChart');
+new Chart(ctx, {
+  type: 'bar',
+  data: data,
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: 'top',
+      },
+      title: {
+        display: true,
+        text: 'ZNÁMKY ŽIAKOV Z WEBTECHU ZA POSLEDNYCH 5 ROKOV'
+      }
+    }
+  },
+});
+const dataPieA = {
+  labels: [
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'FX',
+    'FN',
+  ],
+  datasets: [{
+    label: 'ZS 2021/2022',
+    data: [50,42,36,18,10,0,7],
+    backgroundColor: [
+      'rgb(55, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)',
+      'rgb(25,56,24)',
+      'rgb(244,5,124)',
+      'rgb(1,233,233)',
+      'rgb(40,150,60)',
+
+    ],
+    hoverOffset: 4
+  }]
+};
+
+
+
+const pieA = document.getElementById('pieChartA');
+new Chart(pieA, {
+  type: 'pie',
+  data: dataPieA,
+  options: {
+    responsive: true,
+    scales:{
+
+    },
+    plugins:{
+      tooltip:{
+        enabled:true
+      }, title: {
+        display: true,
+        text: 'ZS 2021/2022'
+      },
+      datalabels:{
+        align: 'center',
+        color: 'black',
+       formatter: (value, context)=> {
+        const datapoints = context.chart.data.datasets[0].data;
+        function totalSum(total, datapoint){
+          return total + datapoint;
+        }
+        const totalValue = datapoints.reduce(totalSum,0);
+        const percantageValue = (value / totalValue * 100).toFixed(1);
+        if(value > 9){
+        return percantageValue + "%";}
+        else
+        return " ";
+       }
+     }
+    }
+    
+  },
+  plugins: [ChartDataLabels]
+});
+
+const dataPieB = {
+  labels: [
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'FX',
+    'FN',
+  ],
+  datasets: [{
+    label: 'ZS 2021/2021',
+    data: [55,48,26,8,5,0,2],
+    backgroundColor: [
+      'rgb(55, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)',
+      'rgb(25,56,24)',
+      'rgb(244,5,124)',
+      'rgb(1,233,233)',
+      'rgb(40,150,60)',
+
+    ],
+    hoverOffset: 4
+  }]
+};
+
+const pieB = document.getElementById('pieChartB');
+new Chart(pieB, {
+  type: 'pie',
+  data: dataPieB,
+  options: {
+    responsive: true,
+    scales:{
+
+    },
+    plugins:{
+      tooltip:{
+        enabled:true
+      },
+      title: {
+        display: true,
+        text: 'ZS 2021/2021'
+      },
+      datalabels:{
+        align: 'center',
+        color: 'black',
+       formatter: (value, context)=> {
+        const datapoints = context.chart.data.datasets[0].data;
+        function totalSum(total, datapoint){
+          return total + datapoint;
+        }
+        const totalValue = datapoints.reduce(totalSum,0);
+        const percantageValue = (value / totalValue * 100).toFixed(1);
+        if(value > 9){
+        return percantageValue + "%";}
+        else
+        return " ";
+       }
+     }
+    }
+    
+  },
+  plugins: [ChartDataLabels]
+});
+
+const dataPieC = {
+  labels: [
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'FX',
+    'FN',
+  ],
+  datasets: [{
+    label: 'ZS 2021/2020',
+    data: [22,36,36,35,4,3,1],
+    backgroundColor: [
+      'rgb(55, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)',
+      'rgb(25,56,24)',
+      'rgb(244,5,124)',
+      'rgb(1,233,233)',
+      'rgb(40,150,60)',
+
+    ],
+    hoverOffset: 4
+  }]
+};
+
+const pieC = document.getElementById('pieChartC');
+new Chart(pieC, {
+  type: 'pie',
+  data: dataPieC,
+  options: {
+    responsive: true,
+    scales:{
+
+    },
+    plugins:{
+      tooltip:{
+        enabled:true
+      },
+      title: {
+        display: true,
+        text: 'ZS 2021/2020'
+      },
+      datalabels:{
+        align: 'center',
+        color: 'black',
+       formatter: (value, context)=> {
+        const datapoints = context.chart.data.datasets[0].data;
+        function totalSum(total, datapoint){
+          return total + datapoint;
+        }
+        const totalValue = datapoints.reduce(totalSum,0);
+        const percantageValue = (value / totalValue * 100).toFixed(1);
+        if(value > 10){
+        return percantageValue + "%";}
+        else
+        return " ";
+       }
+     }
+    }
+    
+  },
+  plugins: [ChartDataLabels]
+});
+//
+const dataPieD = {
+  labels: [
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'FX',
+    'FN',
+  ],
+  datasets: [{
+    label: 'ZS 2021/2019',
+    data: [23,20,14,3,1,5,2],
+    backgroundColor: [
+      'rgb(55, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)',
+      'rgb(25,56,24)',
+      'rgb(244,5,124)',
+      'rgb(1,233,233)',
+      'rgb(40,150,60)',
+
+    ],
+    hoverOffset: 4
+  }]
+};
+
+const pieD = document.getElementById('pieChartD');
+new Chart(pieD, {
+  type: 'pie',
+  data: dataPieD,
+  options: {
+    responsive: true,
+    scales:{
+
+    },
+    plugins:{
+      tooltip:{
+        enabled:true
+      },
+      title: {
+        display: true,
+        text: 'ZS 2021/2019'
+      },
+      datalabels:{
+        align: 'center',
+        color: 'black',
+       formatter: (value, context)=> {
+        const datapoints = context.chart.data.datasets[0].data;
+        function totalSum(total, datapoint){
+          return total + datapoint;
+        }
+        const totalValue = datapoints.reduce(totalSum,0);
+        const percantageValue = (value / totalValue * 100).toFixed(1);
+        if(value > 4){
+        return percantageValue + "%";}
+        else
+        return " ";
+       }
+     }
+    }
+    
+  },
+  plugins: [ChartDataLabels]
+});
+
+const dataPieE = {
+  labels: [
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'FX',
+    'FN',
+  ],
+  datasets: [{
+    label: 'ZS 2021/2018',
+    data: [24,31,24,10,6,5,1],
+    backgroundColor: [
+      'rgb(55, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)',
+      'rgb(25,56,24)',
+      'rgb(244,5,124)',
+      'rgb(1,233,233)',
+      'rgb(40,150,60)',
+
+    ],
+    hoverOffset: 4
+  }]
+};
+
+const pieE = document.getElementById('pieChartE');
+new Chart(pieE, {
+  type: 'pie',
+  data: dataPieE,
+  options: {
+    responsive: true,
+    scales:{
+
+    },
+    plugins:{
+      tooltip:{
+        enabled:true
+      },
+      title: {
+        display: true,
+        text: 'ZS 2021/2018'
+      },
+      datalabels:{
+        align: 'center',
+        color: 'black',
+       formatter: (value, context)=> {
+        const datapoints = context.chart.data.datasets[0].data;
+        function totalSum(total, datapoint){
+          return total + datapoint;
+        }
+        const totalValue = datapoints.reduce(totalSum,0);
+        const percantageValue = (value / totalValue * 100).toFixed(1);
+        if(value > 6){
+        return percantageValue + "%";}
+        else
+        return " ";
+       }
+     }
+    }
+    
+  },
+  plugins: [ChartDataLabels]
+});
+
+const dataPieF = {
+  labels: [
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'FX',
+    'FN',
+  ],
+  datasets: [{
+    label: 'ZS 2021/2017',
+    data: [14,55,45,15,2,4,0],
+    backgroundColor: [
+      'rgb(55, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)',
+      'rgb(25,56,24)',
+      'rgb(244,5,124)',
+      'rgb(1,233,233)',
+      'rgb(40,150,60)',
+
+    ],
+    hoverOffset: 4
+  }]
+};
+
+const pieF = document.getElementById('pieChartF');
+new Chart(pieF, {
+  type: 'pie',
+  data: dataPieF,
+  options: {
+    responsive: true,
+    scales:{
+
+    },
+    plugins:{
+      tooltip:{
+        enabled:true
+      },
+      title: {
+        display: true,
+        text: 'ZS 2021/2017'
+      },
+      datalabels:{
+        align: 'center',
+        color: 'black',
+       formatter: (value, context)=> {
+        const datapoints = context.chart.data.datasets[0].data;
+        function totalSum(total, datapoint){
+          return total + datapoint;
+        }
+        const totalValue = datapoints.reduce(totalSum,0);
+        const percantageValue = (value / totalValue * 100).toFixed(1);
+        if(value > 5){
+        return percantageValue + "%";}
+        else
+        return " ";
+       }
+     }
+    }
+    
+  },
+  plugins: [ChartDataLabels]
+});
+
+
+  </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/marma/CLionProjects/prog2/Marcel_Sotak_111443_zadanie8/main.cpp
+iostream
+-
+list
+-
+vector
+-
+numeric
+-
+algorithm
+-
+initializer_list
+-
+

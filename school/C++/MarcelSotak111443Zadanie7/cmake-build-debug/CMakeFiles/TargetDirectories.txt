@@ -1,0 +1,3 @@
+C:/Users/marma/CLionProjects/prog2/Marcel_sotak_111443_ZADATANIA7/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/marma/CLionProjects/prog2/Marcel_sotak_111443_ZADATANIA7/cmake-build-debug/CMakeFiles/Marcel_sotak_111443_ZADATANIA7.dir
+C:/Users/marma/CLionProjects/prog2/Marcel_sotak_111443_ZADATANIA7/cmake-build-debug/CMakeFiles/rebuild_cache.dir

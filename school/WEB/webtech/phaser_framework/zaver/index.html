@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <title>Alien Invasion</title>
+</head>
+
+<body>
+    <div style="font-family:CustomFont; position:absolute; left:-1000px; visibility:hidden;">.</div>
+
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js', {scope: '/'}).then(function(registration) {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+    }
+    </script>
+        
+    <script src="utilities/align.js"></script>
+    <script src="utilities/alignGrid.js"></script>
+    <script src="utilities/UIBlock.js"></script>
+
+    <script src="logic/phaser.js"></script>
+    <script src="logic/game.js"></script>
+    <script src="logic/questsystem.js"></script>
+
+    <script src="menu/gameOverMenu.js"></script>
+    <script src="menu/tutorialmenu.js"></script>
+    <script src="menu/pausemenu.js"></script>
+    <script src="menu/difuculltyMenu.js"></script>
+    <script src="menu/menuB.js"></script>
+    <script src="menu/menu.js"></script>
+    <script src="menu/winMenu.js"></script>
+
+    <script src="logic/gamemechanic.js"></script>
+    <script src="logic/code.js"></script> 
+
+</body>
+</html>

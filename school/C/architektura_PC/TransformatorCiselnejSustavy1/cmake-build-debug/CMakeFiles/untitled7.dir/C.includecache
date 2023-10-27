@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/marma/CLionProjects/TransformatorCiselnejSustavy1/main.c
+stdio.h
+-
+stdbool.h
+-
+math.h
+-
+

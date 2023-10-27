@@ -1,0 +1,143 @@
+GET http://localhost:8080/api/students
+Accept: application/json
+Authorization: Basic SXZhbjpJdg== # Marcel:Ma
+
+###
+//bjpuCg==  wrong
+//SXZhbjpJdg== ivan
+//R3JlZ29yOkdl  Gregor:Ge
+//TWlsYW46TWk=   Milan:Mi
+// d2hhdDp3aGF0Cg== zle
+GET http://localhost:8080/api/students/1
+Accept: application/json
+Authorization: Basic R3JlZ29yOkdl
+
+###
+DELETE http://localhost:8080/api/students/2
+Accept: application/json
+Authorization: Basic R3JlZ29yOkdl
+
+###
+POST http://localhost:8080/api/students
+Accept: application/json
+Content-Type: application/json
+
+{
+  "aisId":105,
+  "name": "Robo",
+  "email": "user@examplliie.com",
+  "password": "string",
+  "year": 0,
+  "term": 0,
+  "programme": "string"
+}
+
+###
+
+
+GET http://localhost:8080/api/teachers
+Accept: application/json
+Authorization: Basic TWlsYW46TWk=
+
+###
+
+GET http://localhost:8080/api/teachers/2
+Accept: application/json
+Authorization: Basic R3JlZ29yOkdl  #Marcel:Ma
+
+###
+DELETE http://localhost:8080/api/teachers/2
+Accept: application/json
+Authorization: Basic R3JlZ29yOkdl
+//bjpuCg==  wrong
+//SXZhbjpJdg== ivan
+//R3JlZ29yOkdl  Gregor:Ge
+//TWlsYW46TWk=   Milan:Mi
+// d2hhdDp3aGF0Cg== zle
+###
+POST http://localhost:8080/api/teachers
+Accept: application/json
+Content-Type: application/json
+
+{
+  "aisId": 3,
+  "name": "Zankova",
+  "email": "user@examplle3.com",
+  "password": "string",
+  "institute": "string",
+  "department": "string"
+}
+###
+GET http://localhost:8080/api/theses
+Accept: application/json
+Authorization: Basic TWlsYW46TWk=
+###
+
+GET http://localhost:8080/api/theses/1
+Accept: application/json
+Authorization: Basic TWlsYW46TWk=
+
+###
+
+POST http://localhost:8080/api/theses
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic SXZhbjpJdg==
+
+{
+  "registrationNumber": "FEI-wKLRmB8D3lgN9aM8zibKGnEZi0Zw9J",
+  "title": "string",
+  "description": "string",
+  "type": "BACHELOR"
+}
+
+###
+DELETE http://localhost:8080/api/theses/2
+Accept: application/json
+Authorization: Basic R3JlZ29yOkdl
+//bjpuCg==  wrong
+//SXZhbjpJdg== ivan
+//R3JlZ29yOkdl  Gregor:Ge
+//TWlsYW46TWk=   Milan:Mi
+// d2hhdDp3aGF0Cg== zle
+//TWFyY2VsOk1h  Marcel
+###
+
+POST http://localhost:8080/api/theses/2/assign
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic TWlsYW46TWk=
+
+{
+  "studentId": 2
+}
+
+###
+
+POST http://localhost:8080/api/theses/2/submit
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic TWlsYW46TWk=
+
+{
+  "studentId": 2
+}
+
+###
+//bjpuCg==  wrong
+//SXZhbjpJdg== ivan
+//R3JlZ29yOkdl  Gregor:Ge
+//TWlsYW46TWk=   Milan:Mi
+// d2hhdDp3aGF0Cg== zle
+//TWFyY2VsOk1h  Marcel
+
+
+POST http://localhost:8080/api/search/theses
+Accept: application/json
+Content-Type: application/json
+
+
+{
+"studentId": 1
+}
+

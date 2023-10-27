@@ -1,0 +1,3 @@
+C:/Users/marma/CLionProjects/prog2/ARCHITEKTURA PC FINAL/cmake-build-debug/CMakeFiles/ARCHITEKTURA_PC_FINAL.dir
+C:/Users/marma/CLionProjects/prog2/ARCHITEKTURA PC FINAL/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/marma/CLionProjects/prog2/ARCHITEKTURA PC FINAL/cmake-build-debug/CMakeFiles/rebuild_cache.dir

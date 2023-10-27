@@ -1,0 +1,99 @@
+img{
+    
+    object-fit: cover;
+    margin: 5px;
+}
+
+.ContainerForPhotos{
+    width: 80%;
+    margin: auto;
+}
+#photos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.photos{
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+#mapContainer{
+    display: none;
+}
+.filter{
+    width: 300px;
+    height: 30px;
+    margin: 30px;
+}
+.filterContainer{
+    text-align: center;
+}
+.websiteGrid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+    
+}
+.websiteGrid > div > a{
+    text-decoration: none;
+    color: black;
+    font-size: 60px;
+   
+    
+}
+.arrowMove{
+    height: 100px !important;
+    background-color: grey;
+    border-radius: 10px;
+    border: none;
+    color: white;
+}
+.button{
+    background-color: grey;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    width: 300px;
+    height: 400px;
+}
+
+.websiteGrid > div > a:focus{
+    outline: none;
+}
+.websiteGrid > div{
+    background-color:cadetblue;
+}
+.websiteGrid > div:hover{
+    background-color:teal;
+ 
+}
+#map {
+    height: 100%;
+    
+    }
+    @media only screen and (max-width: 770px) {
+        .photos{
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+        }
+        .grid{
+            grid-template-columns: 20% 60% 20% !important;
+        }
+        .arrowMove{
+            margin-top: 50% !important;
+        }
+      }
+
+      @media only screen and (max-width: 400px) {
+        .photos{
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+        }
+       
+      }
+  
+ 

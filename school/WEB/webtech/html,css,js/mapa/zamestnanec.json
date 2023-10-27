@@ -1,0 +1,54 @@
+{
+    "employees": [
+        {
+            "name": "John",
+            "surname": "Doe",
+            "email": "joh.doe@example.com"
+        },
+        {
+            "name": "Peter",
+            "surname": "McGregor",
+            "email": "mcgpeter@outlook.com"
+        },
+        {
+            "name": "George",
+            "surname": "Dumas",
+            "email": "georged@apple.com"
+        },
+        {
+            "name": "Lucas",
+            "surname": "Pine",
+            "email": "luc_pine@gmr.com"
+        },
+        {
+            "name": "Gordon",
+            "surname": "Ramsay",
+            "email": "angry.chef@kitchen.com"
+        },
+        {
+            "name": "Susanne",
+            "surname": "Brier",
+            "email": "suziebri@ele.com"
+        },
+        {
+            "name": "Katherine",
+            "surname": "Toura",
+            "email": "toura.kt@symfony.com"
+        },
+        {
+            "name": "Zdislav",
+            "surname": "Berezny",
+            "email": "zdiberez@almana.cs"
+        },
+        {
+            "name": "Barbara",
+            "surname": "Lancaster",
+            "email": "blancaster@creativemesh.de"
+        },
+        {
+            "name": "Mary",
+            "surname": "Evenlift",
+            "email": "maryodd@murinum.com"
+        }
+    ]
+}

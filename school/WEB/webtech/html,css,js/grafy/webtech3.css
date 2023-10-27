@@ -1,0 +1,183 @@
+html body{
+  background-color: whitesmoke;
+}
+
+.div{
+  background-color:whitesmoke !important;
+  
+}
+
+.fa-1x {
+    font-size: 1.5rem;
+  }
+  .navbar-toggler.toggler-example {
+    cursor: pointer;
+  }
+  .dark-blue-text {
+    color: #0A38F5;
+  }
+  .dark-pink-text {
+    color: #AC003A;
+  }
+  .dark-amber-text {
+    color: #ff6f00;
+  }
+  .dark-teal-text {
+    color: #004d40;
+  }
+  nav{
+    background-color:#134352;
+  }
+  .navbar-brand{
+    color:whitesmoke !important;
+    margin-left: 5px !important;
+  }
+  .navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: none !important;
+}
+
+.navbar-nav{
+  background-color: #dcf1f2 !important;
+  
+}
+.nav-link{
+  color: black !important;
+}
+  .wrapper{
+    width: 100px;
+    height: 100px;
+  }
+  .buttonStopChart{
+    width: 120px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color:#134352;
+    color: whitesmoke;
+  }
+  .navbar-toggler{
+    border: none !important;
+  }
+  .buttonStopChart:hover{
+    background-color: blue;
+    color: white;
+  }
+  .buttonStopChart:focus{
+    outline: none;
+  }
+
+ 
+  .buttonDiv{
+text-align: center;
+  }
+ .div{
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+.radioButtons{
+  margin: auto;
+  width: 200px;
+}
+.radioButtonForLines{
+  margin: auto;
+  padding-left: 5px;
+  width: 100px;
+  background-color:#134352;
+  color: white;
+  border-radius: 10px;
+}
+.chart-container{
+    margin: auto;
+    
+    position: relative;
+    height:60vh; width:80vw;
+    text-align: center;
+}
+.chart-container-dynamical{
+  margin-left:  10%;
+  padding-right:  10%;
+  position: relative;
+  height:70vh; width:90vw;
+  text-align: center;
+}
+.chart-containeris{
+    display: block;
+    margin: auto;
+    position: relative;
+    height:180vh; width:90vw;
+  
+}
+
+.chart-container-Horizontal{
+    display: none;
+    margin: auto;
+    position: relative;
+    height:70vh;
+    width:90vw;
+}
+
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: space-around;
+}
+.flex-container > div{
+    margin-top: 100px;
+}
+
+
+
+  @media only screen and (max-width: 1000px) {
+    
+    .chart-container-dynamical{
+    
+      height:40vh; width:90vw;
+     
+    }
+      }
+      @media only screen and (max-width: 400px) {
+        .chart-container-Horizontal{
+          display: block;
+        }
+        .chart-container{
+            display: none;
+        }
+        .chart-container-dynamical{
+        
+          height:20vh; width:90vw;
+         
+        }
+          }
+        
+  
+
+  .pie-chart-container{
+    width: 300px;
+    height: 300px;
+   }
+
+
+   .fa-1x {
+    font-size: 1.5rem;
+  }
+  .navbar-toggler.toggler-example {
+    cursor: pointer;
+  }
+  .dark-blue-text {
+    color: #0A38F5;
+  }
+  .dark-pink-text {
+    color: #AC003A;
+  }
+  .dark-amber-text {
+    color: #ff6f00;
+  }
+  .dark-teal-text {
+    color: #004d40;
+  }

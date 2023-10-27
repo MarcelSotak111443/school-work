@@ -1,0 +1,3 @@
+C:/Users/marma/CLionProjects/prog2/blok2Klavesnica/cmake-build-release/CMakeFiles/blok2Klavesnica.dir
+C:/Users/marma/CLionProjects/prog2/blok2Klavesnica/cmake-build-release/CMakeFiles/edit_cache.dir
+C:/Users/marma/CLionProjects/prog2/blok2Klavesnica/cmake-build-release/CMakeFiles/rebuild_cache.dir

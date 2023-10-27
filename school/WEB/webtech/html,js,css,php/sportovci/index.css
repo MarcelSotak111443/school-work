@@ -1,0 +1,40 @@
+.dataTable{
+	background-color: #ffebb3;
+}
+.dataTables_wrapper{
+	background-color: #ffebb3;
+}
+.dataTables_wrapper{
+	background-color: #f09b1d;
+	color:black;
+}
+.dataTables_filter input {
+	background-color: white !important;
+}
+table a:-webkit-any-link {
+  color: black;
+  cursor: pointer;
+  text-decoration: none; /* Change text decoration to none */
+}
+
+.btn a {
+	 text-decoration: none; 
+	 color: black;
+}
+.btn{
+	margin: 2px;
+}
+body{
+	background-color:#ffebb3 !important;
+}
+.priemiumPageLoginWindow {
+	width: 100px;
+ 
+}
+.container-loginInfo{
+	float: right;
+}
+.float-left {
+  float: left;
+  margin: 15px;
+}

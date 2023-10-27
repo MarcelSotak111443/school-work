@@ -1,0 +1,455 @@
+@font-face{
+	font-family: 'roboco';
+	src: url(pismo/Roboto-Regular.ttf);
+}
+p{
+	margin: 0em 1em 0em 1em	;
+	font-size: 1.5em;
+	text-align: justify;
+	overflow-wrap: break-word;	
+}
+.interactive_image_text{
+	font-size: 1em;
+	color: white;
+	margin: none;
+}
+h4{
+	text-align: center;
+	font-size: 2em;
+	color: white;
+	margin: 1px;
+	background-color: rgb(77, 38, 0	);
+}
+header{
+	background-color: rgb(51, 26, 0);
+}
+.name_on_aboutme{
+	margin: auto;
+	color: white;
+	text-align: center;
+	font-size: 5em;
+}
+body{
+	margin: 0px;	
+	background-color: rgb(255, 230, 204);
+	width: 100%;
+	}
+html{
+	background-color: orange;
+	font-family: 'roboco';
+}
+.horizontal_list > li{
+	display: inline-block;
+	background-color: rgb(153, 79, 0);
+	margin: auto; 
+	padding: 0.5em  1em;
+	font-family: 'roboco';
+	font-size: 2em;
+	width: 5em;
+	text-align: center;
+}
+.horizontal_list > li:hover {
+	background-color: rgb(51, 26, 0);
+	transition: 0.5s;
+}
+.horizontal_list > li:active {
+	background-color: rgb(51, 26, 0);
+}
+.list_around_text{
+	width: 100%;
+	margin: auto;
+	margin-bottom: 3em;
+}
+horizontal_list > li:hover{
+	background-color: grey;
+	transition: 0.3s;
+	font-family: 'roboco';
+}
+nav{
+	margin: auto;
+}
+ul{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+
+}
+header{
+	margin: auto;
+}
+.nav_link{
+	color: white;
+	text-decoration: none;
+}
+.container1{
+	margin: auto;
+	width: 80%;
+	background-color: rgb(153, 79, 0);
+}
+.my_image_about_me{
+	float: left;
+	border-radius: 10%;
+}
+.my_image_about_me{
+	width: 30em;
+	height: 30em;
+	margin: 1em;
+}
+.content{
+	width: 80%;
+	margin: auto;
+	background-color: whitesmoke;
+	}
+.content_b{
+	width: 80%;
+	margin: auto;
+	background-color: whitesmoke;
+	height: 100%
+}
+.about_me_H2{
+	font-family: roboco;
+	font-size: 4em;
+	margin: auto;
+	text-align: center;
+	padding: 0.5em;
+	background-color: whitesmoke;
+	border-style: none;
+}
+H2{
+	border-style: solid;
+	border-radius: 1em;
+	border-color: rgb(153, 79, 0);
+	background-color:rgb(153, 79, 0);
+}
+}
+.vertical_list{
+	margin: auto;
+}
+.vertical_list > li{
+	color: white;
+	background-color: rgb(153, 79, 0);
+	margin: auto		;
+	margin-top: 0.1em;
+	border-radius: 0.5em;
+	padding: 0.5em  1em;
+	font-size: 2em;
+	width: 5em;
+	text-align: center;
+	text-decoration: none;
+}
+.second_paragraph{
+	margin: 3em;
+	overflow-wrap: break-word;	
+}
+.text_fav_subject{
+	margin: 2em 1em 1em 1em;
+	text-align: center;
+}
+footer{
+	background-color:  rgb(51, 26, 0);
+	height: 5em;
+	margin-top: auto;
+}
+aside{
+	width: 20em;
+	margin: auto;
+	margin-bottom: 4em;
+	color: black;
+	font-size: 2em;
+}
+.cv{
+	text-align: center;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	width: 80%;
+}
+.first_column{
+	background-color:  rgb(51, 26, 0);
+}
+.mail{
+	color: whitesmoke;
+}
+.first_column {
+	color: white;
+}
+.second_column{
+	background-color: 
+	text-align: center;
+	margin-left: 1em;
+}
+
+.my_image_about_me_onCV{
+	width: 30em;
+	height: 30em;
+	margin: 10px;
+	border-radius: 10%;
+}
+
+address{
+	font-size: 1.5em;
+	text-align: left;
+	font-family: 'roboco';
+}
+.contact_grid{
+	display: grid;
+	grid-template-columns: 40% 60%;
+}
+.contact_variable{
+	margin:  1em 0 0 1em;
+}
+.contact_value{
+	margin: 1em 0;
+}
+.cv_abilities{
+	text-align: left;
+	font-size: 2em;
+}
+table, th, td {
+	border:1px solid black;
+}
+th{
+	width: 7em;
+}
+td{
+	height: 5em;
+	text-align: center;
+	font-size:1em;
+}
+table{
+	margin: auto;
+	empty-cells: show;
+}
+tr:nth-of-type(odd){
+	background-color: rgb(255, 243, 230);
+}
+.my_image_about_me > img{
+	height: 100%;
+}
+area {
+	fill: blue;
+}
+.grid_about_me{
+	display: grid;
+	grid-template-columns: 30% 70%;
+}
+.footer_images > li{
+	display: inline;
+	margin: 1em 0.5em 1em 0.5em;
+	z-index: 1;
+}
+.footer_images > li > a > img{
+	height: 3em;
+	margin-top: 1em;
+}
+.footer_images{
+	text-align: center;
+}
+.schedule_footer{
+	margin-top: 10em;
+}
+.name_on_cv{
+	color: white;
+	font-size: 2em;
+	text-align: center;
+}
+.relative_image{
+	position: relative;
+}
+.point{
+	width: 5%;
+	height: 2%;
+	border-color: brown;
+	border-style: ridge;
+	border-radius: 1em;
+	position: absolute;
+}
+.containeris{
+	display: none;
+	position: absolute;
+	width: 10em;
+	height: 15em;
+	background-color: rgb(77, 38, 0);
+}
+#first_point_container{
+	left: 3%;
+	bottom: 25%;
+}
+#first_point{
+	left: 3%;
+	bottom: 52%;
+}
+.point:hover{
+	background-color: rgba(102, 51, 0, 0.5);
+	cursor: help;
+}
+.point:hover + .containeris{
+	display: block;
+	color: brown;
+	background-color: rgba(102, 51, 0	, 0.8);
+}
+#second_point_container{
+	left: 10%;
+	bottom: 50%;
+}
+#second_point{
+	left: 10%;
+	bottom: 77%;
+}
+#third_point_container{
+	left: 9%;
+	bottom: -5%;
+}
+#third_point{
+	left: 9%;
+	bottom: 22%;
+}
+#fourth_point_container{
+	left: 28%;
+	bottom: 50%;
+}
+#fourth_point{
+	left: 22%;
+	bottom: 63.5%;
+}
+#fifth_point_container{
+	left: 40%;
+	bottom: 52%;
+}
+#fifth_point{
+	left: 34%;
+	bottom: 82%;
+}
+#sixth_point_container{
+	left: 43%;
+	bottom: 60%;
+}
+#sixth_point{
+	left: 43%;
+	bottom: 87%;
+}
+#seventh_point_container{
+	left: 43%;
+	bottom: 50%;
+}
+#seventh_point{
+	left: 52%;
+	bottom: 70%;
+}
+#eight_point_container{
+	left: 60%;
+	bottom: 35%;
+}
+#eight_point{
+	left: 65%;
+	bottom: 67%;
+}
+#nineth_point_container{
+	right: 10%;
+	bottom: 40%;
+}
+#nineth_point{
+	left: 76%;
+	bottom: 74%;
+}
+#tenth_point_container{
+	right: 5%;
+	bottom: 25%;
+}
+#tenth_point{
+	left: 87%;
+	bottom: 55%;
+}
+#eleventh_point_container{
+	right: 1%;
+	bottom: 1%;
+}
+#eleventh_point{
+	left: 90%;
+	bottom: 30%;
+}
+.times_schedule > th{
+	background-color: rgb(77, 38, 0);
+	color: white;
+}
+.day{
+	background-color: rgb(77, 38, 0);
+	color: white;
+}
+
+.exercise{
+	background-color: rgb(153, 79, 0);
+	color: white;
+}
+.lecture{
+	background-color: rgb(77, 38, 0);
+	color: white;
+}
+
+.interactive_image{
+	width: 100%;
+	height: 100%;
+}
+.colorBrown{
+	background-color: rgb(153, 79, 0);
+	
+}
+.legend{
+	color: white;
+}
+.legend > div{
+	margin: 1em;
+	padding: 1em;
+	width: 10em;
+}
+.colorBrowner{
+	background-color: rgb(77, 38, 0);
+
+}
+@media only screen and (max-width: 1250px) {
+	.grid_about_me{
+		grid-template-columns: 100%;
+	}
+	.my_image_about_me{
+		width: 15em;
+		height: 15em;
+		margin: auto;
+}
+	aside{
+		font-size: 1em;
+	}
+	.cv{
+		grid-template-columns: 100%;
+	}
+	th{
+		width: 2em;
+		font-size: 1em;
+	}
+	td{
+		height: 3.5em;
+		text-align: center;
+		font-size:0.5em;
+	}
+}
+@media only screen and (max-width: 690px) {
+	th{
+		width: 0.1em;
+		font-size: 0.01em;
+	}
+	td{
+		height: 1em;
+		text-align: center;
+		font-size:0.05em;
+	}
+	.my_image_about_me_onCV{
+		width: 15em;
+		height: 15em;
+		margin: 5px;
+	}
+	.name_on_aboutme{
+		font-size: 2em;
+	}
+	aside{
+		font-size: 1em;
+	}
+}

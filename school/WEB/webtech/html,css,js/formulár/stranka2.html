@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="stranka2.js"></script>
+	<link rel="stylesheet" href="index.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FORMULAR</title>
+</head>
+
+
+<body>
+
+
+
+<script src="myscript.js">
+</script>
+
+
+<div class="hintGirl">
+  <img src="hintGirl.png" alt="Girl in a jacket" width="300" height="450">
+
+</div>
+  <div class="containerForWarning">
+    <div class="howToFill">how to fill</div>
+    <div class="hints"></div>
+</div> 
+
+
+    <form  id="form" action="https://form2mail.hynix.sk/form2mail.php" method="post" enctype="multipart/form-data">
+
+            <input type="hidden" name="price" value="">
+            <input type="hidden" name="apikey" value="37366c7512b7c16596036cba464079d8">
+            <input type="hidden" name="from" value="xsotakm@stuba.sk">
+            <input type="hidden" name="sender" value="Marcel Soták">
+            <input type="hidden" name="to" value="feistu02@gmail.com">
+            <input type="hidden" name="subject" value="Marcel Soták">
+            
+            <input type="hidden" name="redirectOk" value="https://webte1.fei.stuba.sk/~xsotakm/Z2_MS/stranka2.html">
+            <input type="hidden" name="redirectFalse" value="https://webte1.fei.stuba.sk/~xsotakm/Z2_MS/stranka2.html">
+
+    <div class="firstFlexBox">
+      <div>
+        <p class="nameOfInput">NAME <span class="required">*</span></p>
+        <input onBlur="FieldCheck(this)" onfocus="FillAdvise(this)"type="text" name="name" class="check" maxlength="20" placeholder="name" id="name" oninput="CharCounter(this)" >
+        
+        <div class="Counter">
+        <div class="charsCounter">0</div> 
+        <div class="charsLimit">/20</div>
+       </div>
+
+          <div class="warning"> </div>
+      </div>
+
+      <div>
+         <p class="nameOfInput">SURNAME <span class="required">*</span></p>
+        <input onBlur="FieldCheck(this)" onfocus="FillAdvise(this)" type="text" name="surname" class="check" id="surname"  placeholder="surname" oninput="CharCounter(this)" maxlength="20">
+        <div class="Counter">
+        <div class="charsCounter">0</div> 
+        <div class="charsLimit">/20</div>
+       </div>
+
+          <div class="warning"> </div>
+      </div>
+    </div>
+
+    <div class="firstFlexBox">
+      <div>
+         <p class="nameOfInput">DATE <span class="required">*</span></p>
+        <input onBlur="FieldCheck(this)" onfocus="FillAdvise(this)" class="check" type="date" name="date" id="dateOfBirth" onchange="setAge()" oninput="CharCounter(this)">
+        <div class="Counter">
+        <div class="charsCounter">0</div> 
+        <div class="charsLimit">/20</div>
+       </div>
+
+          <div class="warning"> </div>
+      </div>
+      <div>
+            <p class="nameOfInput">AGE <span class="required">*</span></p>
+        <input onBlur="FieldCheck(this)" onfocus="FillAdvise(this)" class="check" type="input" name="age" id="age" maxlength="20" placeholder="age" oninput="CharCounter(this)">
+        <div class="Counter">
+        <div class="charsCounter">0</div> 
+        <div class="charsLimit">/20</div>
+       </div>
+
+          <div class="warning"> </div>
+      </div>
+    </div>
+
+     <p class="nameOfInput" style="margin: auto; width: 5em; text-align: center; margin-top: 2em;">Im</p>
+    <div class="sex">
+
+
+     <label class="container">Woman
+  <input type="radio" checked="checked" name="sex" value="woman">
+  <span class="checkmark"></span>
+</label>
+<label class="container">Man
+  <input type="radio" name="sex" value="man">
+  <span class="checkmark"></span>
+</label>
+    </div>
+
+    <div>
+      <div class="email">
+        <p class="nameOfInput">EMAIL <span class="required">*</span></p>
+        <input onBlur="FieldCheck(this)" onfocus="FillAdvise(this) "type="text" pattern="^^[\w]{3,}[\w.+-]{0,}@[\w-]{2,}[.][a-zA-Z]{2,4}|" id="email" name="email" class="check" 
+        maxlength="20" placeholder="Email" oninput="CharCounter(this)">
+        <div class="Counter">
+        <div class="charsCounter"> 0</div> 
+        <div class="charsLimit">/20</div>
+       </div>
+
+          <div class="warning"> </div>
+
+      </div>
+    </div>
+
+
+    <div class="phoneNumber">
+      <p class="nameOfInput">PHONE <span class="required">*</span></p>
+      <div class="fifthFlex"> 
+
+        <div class="nameOfInput" style="margin-right: 1em;">+</div>
+     <div>  
+
+      <input onBlur="FieldCheck(this)" onfocus="FillAdvise(this) " class="check" id="phonePrefixList" type="text" name="phonePrefix" list="krajiny" pattern="[0-9]{1,}" maxlength="20" placeholder="prefix">
+      <div class="Counter">
+         <div></div>
+         <div></div>
+       </div>
+
+          <div class="warning"> </div>
+
+         
+         
+      <datalist id="krajiny" name="datalist">
+        <option label="slovensko" value="421"></option>
+        <option label="Cesko" value="420"></option>
+        <option label="GR" value="380"></option> 
+      </datalist>
+        </div>
+        <div> 
+
+      <input onBlur="FieldCheck(this)" onfocus="FillAdvise(this) " class="check" type="text" name="phone" id="phone" pattern="^^[\w]{8,}" maxlength="9" placeholder="Phone number" oninput="CharCounter(this)">
+      <div class="Counter">
+        <div class="charsCounter"> 0</div> 
+        <div class="charsLimit">/9</div>   
+       </div>
+
+          <div class="warning"> </div>
+    </div>
+        </div>
+    </div>
+
+
+    <div class="thirdFlex">
+      <div>
+       <p class="nameOfInput">SEX <span class="required">*</span></p> 
+       <select onBlur="FieldCheck(this)" onfocus="FillAdvise(this)"class="check" name="subjectus" id="subject" >
+
+          <option value="" selected="selected">Choose </option>
+
+        </select>
+       <div class="Counter" style="justify-content: center;">
+        <div class="charsCounter">0</div> 
+        <div class="charsLimit">/20</div>
+       </div>
+
+          <div class="warning"> </div>
+      </div>
+      <div>
+         <p class="nameOfInput">SCENE  <span class="required">*</span></p>  <select onBlur="FieldCheck(this)" onfocus="FillAdvise(this)"class="check" name="topic" id="topic">
+          <option value="" selected="selected">Choose</option>
+        </select>
+        
+        <div class="Counter">
+        <div class="charsCounter">0</div> 
+        <div class="charsLimit">/20</div>
+       </div>
+
+          <div class="warning"> </div>
+      </div>
+      <div>
+        <p class="nameOfInput">ROLE <span class="required">*</span></p>  <select onBlur="FieldCheck(this)" onfocus="FillAdvise(this)"class="check" name="chapter" id="chapter">
+          <option value="" selected="selected">Choose</option>
+        </select>
+         <div class="Counter" style="justify-content: center;">
+        <div class="charsCounter">0</div> 
+        <div class="charsLimit">/20</div>
+       </div>
+
+          <div class="warning"> </div>
+      </div>
+    </div> 
+
+   
+
+    <div class="fourtFlex">
+      <div>
+        <p class="nameOfInput" style="margin-top: 5px;">Tools</p>
+        <div onclick="showHiddenAnswer()">
+
+
+          <input type="checkbox" id ="answerone" value="handcuffs" name="radio"> handcuff <br>
+          <input type="checkbox" id = "answertwo" value="whip" name="radio"> whip<br>
+          <input type="checkbox" id = "ownAnswer" value="other" name="radio" > other <br>
+
+          
+          
+ 
+           <div class="hiddenTextField"> 
+          <input onBlur="FieldCheck(this)" onfocus="FillAdvise(this)" type="text" id="fillanswer" name="fillanswer"  maxlength="20" placeholder="more Tools" oninput="CharCounter(this)">
+        <div class="Counter" style="justify-content: center;">
+        <div class="charsCounter">0</div> 
+        <div class="charsLimit">/20</div>
+       </div>
+
+         <div class="warning"> </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="nameOfInput">Im going to use your service</p>
+        <div onclick="displayHiddenDivFunkcion()">
+
+<div class="radioButtons">
+          <label class="container">At club
+            <input type="radio" checked="checked" name="place" value="club" id="atClub">
+            <span class="checkmarkus"></span>
+          </label>
+          <label class="container">home
+            <input type="radio" name="place" value="home" id="home">
+            <span class="checkmarkus"></span>
+          </label>
+
+</div>
+</div>  
+          <div class="hiddenPart"> 
+            <p class="nameOfInput"> ADDRESS</p>
+            <textarea onBlur="FieldCheck(this)" onfocus="FillAdvise(this)" rows="4" cols="50" name="AreaHidden" placeholder="address"></textarea>
+            <div class="Counter" >
+              <div class="charsCounter" >0</div> 
+              <div class="charsLimit">/20</div>
+            </div>
+
+            <div class="warning"> </div>
+          </div>
+        
+    </div>
+
+ 
+  </div>
+
+ <div class="time">  
+  <p class="nameOfInput">Time</p> 
+ <select name="time" id="cars">
+    <option value="1">1 hour</option>
+    <option value="2">2 hour</option>
+    <option value="3">3 hour</option>
+    <option value="4">4 hour</option>
+  </select>
+</div>
+
+  <div>
+    <div class="note">
+      <p class="nameOfInput" style="margin-bottom: 2em;"> note</p>
+      <button  name= "button" class="nicknameButton" type="button" onclick="reavealNameField()">Add Nickname</button>  <br>
+
+<div class="hiddenTextFieldForName"> 
+      <input onBlur="FieldCheck(this)" onfocus="FillAdvise(this)" name="Nickname" type="text"  maxlength="20" placeholder="Nickname" oninput="CharCounter(this)">
+
+       <div class="Counter" style="justify-content:center;">
+        <div class="charsCounter"  >0</div> 
+        <div class="charsLimit">/20</div>
+       </div>
+
+          <div class="warning"> </div>
+      </div>
+      <textarea  name="note"  class="textarea"  rows="4" cols="50" placeholder="note"></textarea>
+    </div>
+  </div>
+
+  <div class="submit">
+    <input type="text" onclick="modal()" name="wtf"  value="send">
+  </div>
+</form>
+
+<div id="modal">
+<div class="modalContent"></div>
+
+</div>
+
+
+
+
+</body>
+</html>

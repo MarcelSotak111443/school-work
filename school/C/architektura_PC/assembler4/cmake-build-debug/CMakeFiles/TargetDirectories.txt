@@ -1,0 +1,3 @@
+C:/Users/marma/CLionProjects/prog2/blok2uloha4/cmake-build-debug/CMakeFiles/blok2uloha4.dir
+C:/Users/marma/CLionProjects/prog2/blok2uloha4/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/marma/CLionProjects/prog2/blok2uloha4/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/marma/CLionProjects/prog2/KONGvsVOJACI/src/data.c
+data.h
+C:/Users/marma/CLionProjects/prog2/KONGvsVOJACI/src/data.h
+
+C:/Users/marma/CLionProjects/prog2/KONGvsVOJACI/src/data.h
+
+C:/Users/marma/CLionProjects/prog2/KONGvsVOJACI/src/rng.c
+rng.h
+C:/Users/marma/CLionProjects/prog2/KONGvsVOJACI/src/rng.h
+
+C:/Users/marma/CLionProjects/prog2/KONGvsVOJACI/src/rng.h
+
+C:/Users/marma/CLionProjects/prog2/KONGvsVOJACI/src/z4.c
+stdio.h
+-
+ctype.h
+-
+stdlib.h
+-
+string.h
+-
+rng.h
+C:/Users/marma/CLionProjects/prog2/KONGvsVOJACI/src/rng.h
+data.h
+C:/Users/marma/CLionProjects/prog2/KONGvsVOJACI/src/data.h
+

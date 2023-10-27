@@ -1,0 +1,3 @@
+C:/Users/marma/CLionProjects/prog2/tyzden2/cmake-build-debug/CMakeFiles/tyzden2.dir
+C:/Users/marma/CLionProjects/prog2/tyzden2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/marma/CLionProjects/prog2/tyzden2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

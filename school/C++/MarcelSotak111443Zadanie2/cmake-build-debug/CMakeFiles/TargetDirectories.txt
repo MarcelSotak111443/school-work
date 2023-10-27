@@ -1,0 +1,3 @@
+C:/Users/marma/CLionProjects/prog2/thisisgoodC++/cmake-build-debug/CMakeFiles/thisisgoodC__.dir
+C:/Users/marma/CLionProjects/prog2/thisisgoodC++/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/marma/CLionProjects/prog2/thisisgoodC++/cmake-build-debug/CMakeFiles/rebuild_cache.dir

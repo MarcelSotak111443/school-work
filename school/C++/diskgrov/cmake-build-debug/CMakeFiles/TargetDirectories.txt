@@ -1,0 +1,3 @@
+C:/Users/marma/CLionProjects/prog2/diskgrov/cmake-build-debug/CMakeFiles/diskgrov.dir
+C:/Users/marma/CLionProjects/prog2/diskgrov/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/marma/CLionProjects/prog2/diskgrov/cmake-build-debug/CMakeFiles/rebuild_cache.dir

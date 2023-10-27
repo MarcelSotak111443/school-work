@@ -1,0 +1,88 @@
+[
+    {
+        "file": "cintorin-slavicie1.jpg",
+        "name": "cintorin-slavicie1",
+        "description": "dom smutku cintorin slavicie",
+        "date": "09.07.2022",
+        "GPS":"48.15752285991444, 17.067841157512714",
+        "path":"photos/"
+    },
+    
+    {
+        "file": "cintorin-slavicie2.jpg",
+        "name": "hroby cintorin slavicie",
+        "description": "hroby cintorin slavicie",
+        "date": "09.07.2022",
+        "GPS":"48.15752285991444, 17.067841157512714",
+        "path":"photos/"
+    },
+
+    {
+        "file": "cintorin-slavicie3.jpg",
+        "name": "cintorin-slavicie2",
+        "description": "hroby cintorin slavicie pekna cesta",
+        "date": "09.07.2022",
+        "GPS":"48.15752285991444, 17.067841157512714",
+        "path":"photos/"
+    },
+
+    {
+        "file": "hrad1.jpg",
+        "name": "hradne nadvorie",
+        "description": "hradne nadvorie hrad stredovek",
+        "date": "10.07.2022",
+        "GPS":"48.1417408318517, 17.099269157206237",
+        "path":"photos/"
+    },
+
+    {
+        "file": "hrad2.jpg",
+        "name": "hradna brana",
+        "description": "hradna brana predok hrad stredovek",
+        "date": "10.07.2022",
+        "GPS":"48.1417408318517, 17.099269157206237",
+        "path":"photos/"
+    },
+   
+
+    {
+        "file": "hrad4.jpg",
+        "name": "hrad z dialky",
+        "description": "hrad odfoteny z dialky",
+        "date": "10.07.2022",
+        "GPS":"48.1417408318517, 17.099269157206237",
+        "path":"photos/"
+    },
+    {
+        "file": "hrad3.jpg",
+        "name": "mur pred hradom",
+        "description": "mur pri hrade",
+        "date": "11.07.2022",
+        "GPS":"48.1417408318517, 17.099269157206237",
+        "path":"photos/"
+    },
+    {
+        "file": "ufo.jpg",
+        "name": "ufo",
+        "description": "ufo na moste",
+        "date": "11.07.2022",
+        "GPS":"48.13817806150183, 17.10455269565925",
+        "path":"photos/"
+    },
+    {
+        "file": "ufo2.jpg",
+        "name": "vyhlad pri ufe",
+        "description": "vyhlad pri ufo",
+        "date": "12.07.2022",
+        "GPS":"48.13817806150183, 17.10455269565925",
+        "path":"photos/"
+    },
+    {
+        "file": "zlatepiesky.jpg",
+        "name": "plaz",
+        "description": "vyhlad na plaz zlate piesky",
+        "date": "12.07.2022",
+        "GPS":"48.18522803146392, 17.187405104147718",
+        "path":"photos/"
+    }
+]

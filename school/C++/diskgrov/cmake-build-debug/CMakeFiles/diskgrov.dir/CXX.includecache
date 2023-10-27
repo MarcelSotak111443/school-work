@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/marma/CLionProjects/prog2/diskgrov/main.cpp
+iostream
+-
+iomanip
+-
+cassert
+-
+list
+-
+map
+-
+queue
+-
+stack
+-
+set
+-
+deque
+-
+algorithm
+-
+limits
+-
+

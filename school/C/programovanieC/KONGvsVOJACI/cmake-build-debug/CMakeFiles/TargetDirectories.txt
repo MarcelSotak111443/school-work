@@ -1,0 +1,3 @@
+C:/Users/marma/CLionProjects/prog2/KONGvsVOJACI/cmake-build-debug/CMakeFiles/z4.dir
+C:/Users/marma/CLionProjects/prog2/KONGvsVOJACI/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/marma/CLionProjects/prog2/KONGvsVOJACI/cmake-build-debug/CMakeFiles/rebuild_cache.dir

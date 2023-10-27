@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\blok2uloha2.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\blok2uloha2.dir/objects.a @CMakeFiles\blok2uloha2.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\blok2uloha2.dir/objects.a -Wl,--no-whole-archive  -o blok2uloha2.exe -Wl,--out-implib,libblok2uloha2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\blok2uloha2.dir\linklibs.rsp

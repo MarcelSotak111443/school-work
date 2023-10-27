@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    
+
+    <link rel="stylesheet" type="text/css" href="map.css" />
+    
+  </head>
+  <body>
+    <div  class="websiteGrid">
+        <div><a href="index.html">galeria</a></div>
+        <div><a href="#">mapa</a></div>
+    
+    </div>
+   
+    <!--The div element for the map -->
+    <div id="map"></div>
+   
+    <div id="directions-panel"></div>
+ <script> var markers = []
+  var waypt = []; 
+  var map;
+</script>
+<div class="buttonContainer">
+  <button onclick="showRoute()">Ukaz trasu</button>
+
+</div>
+<div  class="buttonContainer">
+  <button onclick="hideRoute()">schovaj Trasu</button>
+</div>
+    
+   
+
+  </body>
+
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3owr7r9uEBVCUGc6PzuQzenUgm1izwDE&callback=init&v=weekly"
+  defer
+></script>
+
+</html>
+</script>
+<script>
+var products;
+let http = new XMLHttpRequest();
+http.open('get', 'photos.json' , true);
+http.send();
+http.onload = function init(){
+    if(this.readyState == 4 && this.status== 200){
+         products = JSON.parse(this.responseText);
+         initMap()
+        }}
+function initMap() {
+
+   
+        
+context = " ";
+const uluru = { lat:48.15752285991444, lng:  17.067841157512714 };
+   map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 12,
+    center: uluru,
+  });
+
+
+  
+  
+  for (let i = 0; i < products.length; i++) {  
+    const words = products[i].GPS.split(',')
+            latV = parseFloat(words[0]);
+            lngV = parseFloat(words[1]);
+            
+    var number = 0;
+        for (let k = 0; k < products.length; k++) {  
+        const words = products[k].GPS.split(',')
+            latVVV = parseFloat(words[0]);
+            lngVVV = parseFloat(words[1]);
+
+            if(latVVV == latV && lngVVV == lngV){
+               number++;
+            }
+        }
+       
+        context=  `<div class="flexBox">`
+        
+    for (let j = 0; j < products.length; j++) {  
+        const words = products[j].GPS.split(',')
+            latVV = parseFloat(words[0]);
+            lngVV = parseFloat(words[1]);
+            if(latVV == latV && lngVV == lngV){
+              
+                if(number == 1){
+                    
+                context = context + `
+                
+                <div style="text-align: center; margin-right: 10px">
+    <div>${products[j].name}</div>
+    <div>${products[j].description}</div>
+    <div>${products[j].date}</div>
+    <img  style="width: 100px; height: 100px;" src="${products[j].path + products[j].file}" alt="">
+    </div>
+                `}
+                else{
+                    context = context +`
+                    <div >
+                    <img  style="width: 100px; height: 100px;" src="${products[j].path + products[j].file}" alt="">
+                    </div>`
+                }
+            }
+           
+}
+number = 0;
+
+context = context + `</div>`
+const infowindow = new google.maps.InfoWindow({
+    content: context,
+    ariaLabel: "Uluru",
+  });
+  context = " ";
+
+       
+        markers[i] = new google.maps.Marker({
+        position: new google.maps.LatLng(latV, lngV),
+        map: map
+      });
+      
+
+       markers[i].addListener("click", () => {
+    infowindow.open({
+      anchor: markers[i],
+      map,
+    });
+  });
+}
+window.initMap = initMap;
+
+
+
+directionsService = new google.maps.DirectionsService;
+directionsDisplay = new google.maps.DirectionsRenderer;
+
+
+
+
+}
+
+function showRoute(){
+    directionsDisplay.setMap(map);
+    for (let i = 0; i < products.length; i++){
+        waypt.push({
+            location: markers[i].getPosition(),
+            stopover:true
+        })
+}
+
+console.log(waypt)
+directionsService.route({
+
+origin: markers[0].getPosition(),
+destination: markers[9].getPosition(),
+waypoints: waypt,
+travelMode: 'DRIVING',
+
+}).then((response) => {
+      directionsDisplay.setDirections(response);
+
+      const route = response.routes[0];
+      const summaryPanel = document.getElementById("directions-panel");
+
+      summaryPanel.innerHTML = "";
+      var distance = 0;
+      // For each route, display summary information.
+      for (let i = 0; i < route.legs.length; i++) {
+        const routeSegment = i + 1;
+        distance += parseInt(route.legs[i].distance.text.match(/(\d+)/))
+        console.log(parseInt(route.legs[i].distance.text.match(/(\d+)/)))
+      }
+      summaryPanel.innerText = distance + "km";
+    })
+    .catch((e) => window.alert("Directions request failed due to " + status));
+}
+
+
+
+
+
+function hideRoute(){
+  const summaryPanel = document.getElementById("directions-panel");
+    for (let y = 0; y < products.length; y++){
+        waypt.pop();
+        
+}
+   directionsDisplay.setMap(null);
+   summaryPanel.innerText = "";
+}
+
+
+
+
+
+
+</script>
+</body>
+</html>

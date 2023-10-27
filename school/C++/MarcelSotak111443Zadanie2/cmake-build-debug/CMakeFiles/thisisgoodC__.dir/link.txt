@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\thisisgoodC__.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\thisisgoodC__.dir/objects.a @CMakeFiles\thisisgoodC__.dir\objects1.rsp
+C:\MinGW\bin\g++.exe  -Wall -Wextra -g   -Wl,--whole-archive CMakeFiles\thisisgoodC__.dir/objects.a -Wl,--no-whole-archive  -o thisisgoodC__.exe -Wl,--out-implib,libthisisgoodC__.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\thisisgoodC__.dir\linklibs.rsp

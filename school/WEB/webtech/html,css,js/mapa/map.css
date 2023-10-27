@@ -1,0 +1,64 @@
+/* Set the size of the div element that contains the map */
+#map {
+    height: 900px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+  }
+  .websiteGrid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+    
+}
+.websiteGrid > div > a{
+    text-decoration: none;
+    color: black;
+    font-size: 60px;
+   
+    
+}
+.arrowMove{
+    height: 100px !important;
+}
+
+.websiteGrid > div > a:focus{
+    outline: none;
+}
+.websiteGrid > div{
+    background-color:cadetblue;
+}
+.websiteGrid > div:hover{
+    background-color:teal;
+ 
+}
+.flexBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+#directions-panel{
+    width: 100px;
+    margin: auto;
+    background-color: gray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+}
+button{
+    width: 150px;
+    height: 50px;
+    background-color: gray;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+.buttonContainer{
+    text-align: center;
+}

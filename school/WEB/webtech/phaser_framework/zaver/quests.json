@@ -1,0 +1,33 @@
+{
+    "quests":[{
+    "id":"0",
+    "description":"Shoot this amount of enemies",
+    "number":4,
+    "object":"npc"
+    },
+
+    {
+    "id":"1",
+    "description":"Hold-on this amount of seconds",
+    "number":10,
+    "object":"player"
+    },
+    {
+    "id":"2",
+    "description":"Rotate your planet this amount of degrees",
+    "number":180,
+    "object":"earth"
+    },
+    {
+    "id":"3",
+    "description":"Build this amount of cannons",
+    "number":1,
+    "object":"cannon"
+    },
+    {
+    "id":"4",
+    "description":"Build this amount of factories",
+    "number":2,
+    "object":"factory"
+    }
+]}

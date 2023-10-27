@@ -1,0 +1,3 @@
+php server2.php start
+
+ked na server zmen path 

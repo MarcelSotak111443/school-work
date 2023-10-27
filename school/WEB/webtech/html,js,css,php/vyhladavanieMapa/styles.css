@@ -1,0 +1,74 @@
+
+form {
+    gap: .5rem;
+}
+
+#secondSection {
+    width: 60%;
+    display: grid;
+    grid-template-columns: 2fr 2fr; /* Two columns with equal width */
+    grid-template-rows: 2fr; 
+    margin: auto;
+    grid-gap: 5px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#weather {
+    background-color: #c6f4f7;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: -1rem;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin: 5px ;
+}
+#grid2sectionRight{
+    background-color: #c6f4f7;
+    margin: 5px;
+    border-radius: 1em;
+
+}
+#pocasie img {
+    height: 120px;
+}
+
+.flag {
+    height: 40px;
+}
+#map {
+   
+    width: 100%;
+    border-radius: 10px;
+    height: 500px;
+}
+
+#siteVisitors{
+  position: fixed;
+  top: 20px;
+  width: 320px;
+ 
+
+}
+.col-lg-4{
+    width: 25% !important;
+
+}
+.col-lg-4 > table > thead > tr > th {
+    background-color:#25aac4; !important;
+}
+th{
+    background-color: #c6f4f7;
+}
+table{
+    width: 100%;
+    margin: 5px;
+  
+}
+thead{
+   
+}
